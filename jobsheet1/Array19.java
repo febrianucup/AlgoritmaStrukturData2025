@@ -4,6 +4,10 @@ public class Array19 {
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
 
+        System.out.println("=======================");
+        System.out.println("Menghitung IP Semester");
+        System.out.println("=======================");
+
         String[] namaMK={"Pancasila", "DASPRO", "PrakDASPRO", "RPL", "KTI", "K3", "CTPS", "MATDAS"};
         double[][] bobotNilai=new double[8][2];
         double[] nilaiMhs=new double[8];
@@ -14,6 +18,7 @@ public class Array19 {
             bobotNilai[i][1]=input.nextDouble();
         }
 
+        //konversi nilai ke huruf
         String[] nilaiHuruf=new String[8];
         for(int i=0;i<nilaiMhs.length;i++){
             if(nilaiMhs[i]>80&&nilaiMhs[i]<=100){
@@ -33,6 +38,7 @@ public class Array19 {
             }
         }
 
+        //pembobotan nilai
         for(int i=0;i<nilaiHuruf.length;i++){
             if(nilaiHuruf[i].equalsIgnoreCase("A")){
                 bobotNilai[i][0]=4;
@@ -51,6 +57,8 @@ public class Array19 {
             }
         }
 
+        //tabel menampilkan seluruh nilai
+        System.out.println("==Hasil Konversi Nilai==");
         System.out.print(String.format("%-15s", "Mk"));
         System.out.println("Nilai Angka\t" + "Nilai Huruf\t" + "Bobot Nilai");
         for(int i=0;i<nilaiMhs.length;i++){
@@ -58,13 +66,14 @@ public class Array19 {
             System.out.println(nilaiMhs[i] + "\t\t" + nilaiHuruf[i] + "\t\t" + bobotNilai[i][0]);
         }
         
+        //menentukan IP
         double totalNilai=0;
         double totalSKS=0;
         for(int i=0;i<bobotNilai.length;i++){
             totalNilai+=bobotNilai[i][0]*bobotNilai[i][1];
             totalSKS+=bobotNilai[i][1];
         }
-
+        System.out.println("==Hasil IP==");
         double ip=totalNilai/totalSKS;
         System.out.println("IP: " + ip);
     }

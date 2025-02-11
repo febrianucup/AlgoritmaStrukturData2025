@@ -17,7 +17,7 @@ public class Function {
             for(int j=0;j<a[i].length;j++){
                 totalPercabang+=a[i][j]*harga[j];
             }
-            System.out.println("Total pengahsilan RoyalGarden" + i + ": " + totalPercabang);
+            System.out.println("Total pengahsilan RoyalGarden" + (i+1) + ": " + totalPercabang);
         }
     }
 
