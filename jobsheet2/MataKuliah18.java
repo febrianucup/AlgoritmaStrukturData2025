@@ -1,12 +1,12 @@
 package jobsheet2;
 
-public class MataKuliah19 {
+public class MataKuliah18 {
     String kodeMK;
     String nama;
     int sks;
     int jumlahJam;
     
-    public MataKuliah19(String kode, String name, int sks, int jmlhJam){
+    public MataKuliah18(String kode, String name, int sks, int jmlhJam){
         kodeMK=kode;
         nama=name;
         this.sks=sks;
@@ -22,10 +22,12 @@ public class MataKuliah19 {
 
     void ubahSKS(int sksBaru){
         sks=sksBaru;
+        System.out.println("SKS telah diubah");
     }
 
     void tambahJam(int jam){
         jumlahJam+=jam;
+        System.out.println("Jam berhasil ditambahkan");
     }
 
     void kurangJam(int jam){
