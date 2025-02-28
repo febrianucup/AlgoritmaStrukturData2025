@@ -41,8 +41,21 @@ public class DataDosen18 {
                 totalUsiaWanita+=dosen.usia;
             }
         }
-        double manAgeAvarage=totalUsiaPria/man;
-        double womanAgeAvarage=totalUsiaWanita/woman;
+
+        double manAgeAvarage;
+        double womanAgeAvarage;
+
+        if(totalUsiaPria!=0){
+            manAgeAvarage=totalUsiaPria/man;
+        }else{
+            manAgeAvarage=0;
+        }
+        if(totalUsiaWanita!=0){
+            womanAgeAvarage=totalUsiaWanita/woman;
+        }else{
+            womanAgeAvarage=0;
+        }
+        
         System.out.println("Rata-rata usia dosen pria: " + manAgeAvarage);
         System.out.println("Rata-rata usia dosen wanita: " + womanAgeAvarage);
         System.out.println("-----------------------------");

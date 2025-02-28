@@ -35,11 +35,37 @@ public class DosenDemo18 {
             arrayOfDosen[i]=new Dosen18(kode, nama, jenisKelamin, usia);
         }
 
-      DataDosen18 myArrayOfDosen=new DataDosen18();
-      myArrayOfDosen.dataSemuaDosen(arrayOfDosen);
-      myArrayOfDosen.jumlahDosenPerJenisKelamin(arrayOfDosen);
-      myArrayOfDosen.rerataUsiaDosenPerjenisKelamin(arrayOfDosen);
-      myArrayOfDosen.infoDosenPalingTua(arrayOfDosen);
-      myArrayOfDosen.infoDosenPalingMuda(arrayOfDosen);
+        int choose;
+        DataDosen18 myArrayOfDosen=new DataDosen18();
+        do{
+            System.out.println("1. Tampilkan Seluruh Data Dosen\n2. Jumlah Dosen Sesuai Jenis Kelamin\n3. Rata-Rata Usia Dosen Sesuai Jenis Kelamin\n4. Info Dosen Paling Tua\n5. Info Dosen Paling Muda\n6. Keluar");
+            System.out.print("Choose the menu: ");
+            choose=input.nextInt();
+
+            switch (choose) {
+                case 1:
+                    myArrayOfDosen.dataSemuaDosen(arrayOfDosen);
+                    break;
+                case 2:
+                    myArrayOfDosen.jumlahDosenPerJenisKelamin(arrayOfDosen);
+                    break;
+                case 3:
+                    myArrayOfDosen.rerataUsiaDosenPerjenisKelamin(arrayOfDosen);
+                    break;
+                case 4:
+                    myArrayOfDosen.infoDosenPalingTua(arrayOfDosen);
+                    break;
+                case 5:
+                    myArrayOfDosen.infoDosenPalingMuda(arrayOfDosen);
+                    break;
+                case 6:
+                    System.out.println("Keluar Dari Menu!");
+                    break;
+            
+                default:
+                    System.out.println("Invalid!!");
+                    break;
+            }
+        }while(choose!=6);
     }
 }
