@@ -5,8 +5,8 @@ public class DataDosen18 {
     int woman=0;
     
     void dataSemuaDosen(Dosen18[] arrayOfDosen){
+        int i=1;
         for(Dosen18 dosen:arrayOfDosen){
-            int i=1;
             System.out.println("Data Dosen ke-" + i);
             System.out.println("KODE         : " + dosen.kode);
             System.out.println("NAMA         : " + dosen.nama);
