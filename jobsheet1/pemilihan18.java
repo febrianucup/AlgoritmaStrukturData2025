@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class pemilihan19{
+public class pemilihan18 {
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
         System.out.println("Program Menghitung Nilai Akhir");
