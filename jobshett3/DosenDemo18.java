@@ -41,6 +41,7 @@ public class DosenDemo18 {
             System.out.println("1. Tampilkan Seluruh Data Dosen\n2. Jumlah Dosen Sesuai Jenis Kelamin\n3. Rata-Rata Usia Dosen Sesuai Jenis Kelamin\n4. Info Dosen Paling Tua\n5. Info Dosen Paling Muda\n6. Keluar");
             System.out.print("Choose the menu: ");
             choose=input.nextInt();
+            System.out.println("-----------------------");
 
             switch (choose) {
                 case 1:

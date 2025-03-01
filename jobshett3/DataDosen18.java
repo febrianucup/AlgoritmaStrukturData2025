@@ -1,9 +1,7 @@
 package jobshett3;
 
 public class DataDosen18 {
-    int man=0;
-    int woman=0;
-    
+
     void dataSemuaDosen(Dosen18[] arrayOfDosen){
         int i=1;
         for(Dosen18 dosen:arrayOfDosen){
@@ -18,43 +16,66 @@ public class DataDosen18 {
         }
     }
 
-    void jumlahDosenPerJenisKelamin(Dosen18[] arrayOfDosen){
+    int jumlahDosenPria(Dosen18[] arrayOfDosen){
+        int man=0;
         for(int i=0;i<arrayOfDosen.length;i++){
             if(arrayOfDosen[i].jenisKelamin.equals(true)){
                 man++;
-            }else{
+            }
+        }
+        return man;
+    }
+
+    int jumlahDosenWanita(Dosen18[] arrayOfDosen){
+        int woman=0;
+        for(int i=0;i<arrayOfDosen.length;i++){
+            if(arrayOfDosen[i].jenisKelamin.equals(false)){
                 woman++;
             }
         }
-        System.out.println("Jumlah Dosen Pria: " + man);
-        System.out.println("Jumlah Dosen Wanita: " + woman);
+        return woman;
+    }
+
+    void jumlahDosenPerJenisKelamin(Dosen18[] arrayOfDosen){
+        int manTotal=jumlahDosenPria(arrayOfDosen);
+        int womanTotal=jumlahDosenWanita(arrayOfDosen);
+
+        System.out.println("Jumlah Dosen Pria: " + manTotal);
+        System.out.println("Jumlah Dosen Wanita: " + womanTotal);
         System.out.println("-----------------------------");
     }
 
-    void rerataUsiaDosenPerjenisKelamin(Dosen18[] arrayOfDosen){
+    double totalUsiaPria(Dosen18[] arrayOfDosen){
         double totalUsiaPria=0;
-        double totalUsiaWanita=0;
         for(Dosen18 dosen:arrayOfDosen){
             if(dosen.jenisKelamin.equals(true)){
                 totalUsiaPria+=dosen.usia;
-            }else if(dosen.jenisKelamin.equals(false)){
+            }
+        }
+
+        return totalUsiaPria;
+    }
+
+    double totalUsiaWanita(Dosen18[] arrayOfDosen){
+        double totalUsiaWanita=0;
+        for(Dosen18 dosen:arrayOfDosen){
+            if(dosen.jenisKelamin.equals(false)){
                 totalUsiaWanita+=dosen.usia;
             }
         }
 
-        double manAgeAvarage;
-        double womanAgeAvarage;
+        return totalUsiaWanita;
+    }
 
-        if(totalUsiaPria!=0){
-            manAgeAvarage=totalUsiaPria/man;
-        }else{
-            manAgeAvarage=0;
-        }
-        if(totalUsiaWanita!=0){
-            womanAgeAvarage=totalUsiaWanita/woman;
-        }else{
-            womanAgeAvarage=0;
-        }
+    void rerataUsiaDosenPerjenisKelamin(Dosen18[] arrayOfDosen){
+        double totalUsiaPria=totalUsiaPria(arrayOfDosen);
+        double totalUsiaWanita=totalUsiaWanita(arrayOfDosen);
+        
+        int man=jumlahDosenPria(arrayOfDosen);
+        int woman=jumlahDosenWanita(arrayOfDosen);
+
+        double manAgeAvarage=totalUsiaPria!=0?totalUsiaPria/man:0;
+        double womanAgeAvarage=totalUsiaWanita!=0?totalUsiaWanita/woman:0;
         
         System.out.println("Rata-rata usia dosen pria: " + manAgeAvarage);
         System.out.println("Rata-rata usia dosen wanita: " + womanAgeAvarage);
