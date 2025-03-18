@@ -1,4 +1,4 @@
-package jobshett3;
+package jobsheet3;
 import java.util.Scanner;
 public class MataKuliah18 {
     Scanner input=new Scanner(System.in);

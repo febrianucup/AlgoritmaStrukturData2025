@@ -1,4 +1,4 @@
-package jobshett3;
+package jobsheet3;
 
 import java.util.Scanner;
 public class MahasiswaDemo18 {

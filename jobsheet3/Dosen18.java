@@ -1,4 +1,4 @@
-package jobshett3;
+package jobsheet3;
 
 public class Dosen18 {
     String kode;

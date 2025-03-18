@@ -1,4 +1,4 @@
-package jobshett3;
+package jobsheet3;
 
 public class Mahasiswa18 {
     public String nim;
