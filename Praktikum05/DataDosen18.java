@@ -41,7 +41,7 @@ public class DataDosen18 {
     void sortingDSC(){
         for(int i=0;i<dataDosen.length-1;i++){
             int idxmin=i;
-            for(int j=1;j<dataDosen.length-i;j++){
+            for(int j=1;j<dataDosen.length-i;j++){ 
                 if(dataDosen[j].usia>dataDosen[idxmin].usia){
                     idxmin=j;
                 }
