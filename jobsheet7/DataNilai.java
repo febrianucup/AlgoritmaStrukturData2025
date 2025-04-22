@@ -1,8 +1,7 @@
 package jobsheet7;
 
 public class DataNilai {
-    Mahasiswa[] dataMahasiswa;
-    MataKuliah[] dataMK;
+   
     Penilaian[] nilai = new Penilaian[5];
 
     DataNilai(){
