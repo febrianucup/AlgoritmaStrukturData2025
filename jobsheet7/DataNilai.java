@@ -39,6 +39,8 @@ public class DataNilai {
             if(dataMahasiswa[i].NIM.equalsIgnoreCase(nim)){
                 idx=i;
                 break;
+            }else{
+                System.out.println("NIM yang dicari tidak ada");
             }
         }
         return idx;

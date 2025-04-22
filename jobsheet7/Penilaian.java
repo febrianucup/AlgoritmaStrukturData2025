@@ -17,8 +17,6 @@ public class Penilaian {
         nilaiAkhir=((nilaiTugas*0.3) + (nilaiUts*0.3) + (nilaiUas*0.4));
     }
 
-    
-
     void tampilDataNilai(){
         System.out.println(mahasiswa.nama + " | " + mataKuliah.namaMK + " | " + "Nilai AKhir: " + nilaiAkhir);
     }
