@@ -38,9 +38,10 @@ public class DataNilai {
             if(dataMahasiswa[i].NIM.equalsIgnoreCase(nim)){
                 idx=i;
                 break;
-            }else{
-                System.out.println("NIM yang dicari tidak ada");
             }
+        }
+        if (idx == -1) {
+            System.out.println("NIM yang dicari tidak ada");
         }
         return idx;
     }
@@ -48,7 +49,8 @@ public class DataNilai {
     void tampilNim(String nim, Mahasiswa[] dataMahasiswa){
         int id=searchNIM(nim, dataMahasiswa);
         if(id!=-1){
-            System.out.println("Mahasiswa ditemukan: NIM: " + dataMahasiswa[id].NIM + " | " + "Nama: " + dataMahasiswa[id].nama + " | " + "Prodi: " + dataMahasiswa[id].prodi);
+            System.out.println("Mahasiswa ditemukan: NIM: " + dataMahasiswa[id].NIM + " | " + "Nama: " + dataMahasiswa
+            [id].nama + " | " + "Prodi: " + dataMahasiswa[id].prodi);
         }
     }
 
