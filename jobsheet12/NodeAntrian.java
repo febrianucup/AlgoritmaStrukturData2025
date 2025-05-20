@@ -9,7 +9,7 @@ public class NodeAntrian {
     NodeAntrian(NodeAntrian prev, String num, String name, NodeAntrian next){
         queueNum=num;
         recceptionName=name;
-        this.next=null;
-        this.prev=null;
+        this.next=next;
+        this.prev=prev;
     }
 }
