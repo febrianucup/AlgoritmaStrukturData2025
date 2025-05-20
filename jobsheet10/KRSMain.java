@@ -11,15 +11,17 @@ public class KRSMain {
 
         do {
             System.out.println("\n=== Menu Antrian Persetujuan KRS ===");
-            System.out.println("1. Tambah Mahasiswa ke Antrian");
-            System.out.println("2. Proses KRS (2 Mahasiswa)");
-            System.out.println("3. Tampilkan Semua Antrian");
-            System.out.println("4. Tampilkan 2 Mahasiswa Terdepan");
-            System.out.println("5. Tampilkan Mahasiswa Paling Akhir");
-            System.out.println("6. Cek Jumlah Antrian");
-            System.out.println("7. Cek Jumlah Sudah Proses KRS");
-            System.out.println("8. Cek Jumlah Belum Proses KRS");
-            System.out.println("9. Kosongkan Antrian");
+            System.out.println("1. Cek Data Kosong");
+            System.out.println("2. Cek Data Full");
+            System.out.println("3. Tambah Mahasiswa ke Antrian");
+            System.out.println("4. Proses KRS (2 Mahasiswa)");
+            System.out.println("5. Tampilkan Semua Antrian");
+            System.out.println("6. Tampilkan 2 Mahasiswa Terdepan");
+            System.out.println("7. Tampilkan Mahasiswa Paling Akhir");
+            System.out.println("8. Cek Jumlah Antrian");
+            System.out.println("9. Cek Jumlah Sudah Proses KRS");
+            System.out.println("10. Cek Jumlah Belum Proses KRS");
+            System.out.println("11. Kosongkan Antrian");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = scanner.nextInt();
@@ -27,6 +29,22 @@ public class KRSMain {
 
             switch (pilihan) {
                 case 1:
+                    boolean empty=antrianKRS.isEmpty();
+                    if(empty==true){
+                        System.out.println("Data kosong");
+                    }else{
+                        System.out.println("Data Penuh");
+                    }
+                    break;
+                case 2:
+                    boolean Full=antrianKRS.isFull();
+                    if(Full==true){
+                        System.out.println("Data Penuh");
+                    }else{
+                        System.out.println("Data Kosong");
+                    }
+                    break;
+                case 3:
                     System.out.println("--- Daftar Data Mahasiswa ---");
                     System.out.print("NIM: ");
                     String nim = scanner.nextLine();
@@ -38,32 +56,32 @@ public class KRSMain {
                     String kelas = scanner.nextLine();
                     antrianKRS.addQueue(new Mahasiswa18(nim, nama, prodi, kelas));
                     break;
-                case 2:
+                case 4:
                     System.out.println("KRS yang telah diproses");
                     for(int i=0;i<2;i++){
                         Mahasiswa18 mhs=antrianKRS.peekMhs();
                         mhs.tampilkanData();
                     }
                     break;
-                case 3:
+                case 5:
                     antrianKRS.tampilSemua();
                     break;
-                case 4:
+                case 6:
                     antrianKRS.tampilDuaTerdepan();
                     break;
-                case 5:
+                case 7:
                     antrianKRS.tampilTerbelakang();
                     break;
-                case 6:
+                case 8:
                     System.out.println("Jumlah mahasiswa dalam antrian: " + antrianKRS.hitungJumlahAntrian());
                     break;
-                case 7:
+                case 9:
                     System.out.println("Jumlah mahasiswa yang sudah proses KRS: " + antrianKRS.afterProcess);
                     break;
-                case 8:
+                case 10:
                     System.out.println("Jumlah mahasiswa yang belum proses KRS: " + (antrianKRS.hitungBelumKRS()));
                     break;
-                case 9:
+                case 11:
                     antrianKRS.clear();
                     break;
                 case 0:

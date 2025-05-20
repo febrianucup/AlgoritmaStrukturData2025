@@ -56,7 +56,7 @@ public class AntrianKRS {
             System.out.println("Antrian kosong.");
             return null;
         }
-        if(data.length<2){
+        if(size<2){
             System.out.println("Antrian kurang");
             return null;
         }
@@ -84,13 +84,16 @@ public class AntrianKRS {
             System.out.println("Queue kosong");
             return;
         }
-        System.out.print("Dua Mahasiswa terdepan: ");
+        if(size<2){
+            System.out.println("Antrian kurang");
+        }
         if(size>=2){
-            for(int i=front;i<front+1;i++){
-                System.out.println("NIM - NAMA - PRODI - KELAS");
-                data[i].tampilkanData();
-                
-            }
+            System.out.println("Dua Mahasiswa terdepan: ");
+            System.out.println("NIM - NAMA - PRODI - KELAS");
+            for(int i=0;i<2;i++){
+            int index=(front + i) % max;
+            data[index].tampilkanData();
+        }
         }
     }
 
@@ -113,6 +116,6 @@ public class AntrianKRS {
     }
 
     int hitungBelumKRS(){
-        return (DPAKRS - (size));
+        return (DPAKRS - (afterProcess));
     }
 }
