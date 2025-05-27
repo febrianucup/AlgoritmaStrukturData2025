@@ -1,11 +1,13 @@
 package CM;
 
 public class Kendaraan {
-    String platNomor, tipe, merk;
+    String platNo;
+    String tipe;
+    String merk;
 
-    Kendaraan(String plat, String tipe, String merk){
-        platNomor=plat;
-        this.tipe=tipe;
-        this.merk=merk;
+    Kendaraan(String platNo, String tipe, String merk){
+        this.platNo = platNo;
+        this.tipe = tipe;
+        this.merk = merk;
     }
 }

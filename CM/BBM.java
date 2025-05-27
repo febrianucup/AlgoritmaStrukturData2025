@@ -2,10 +2,10 @@ package CM;
 
 public class BBM {
     String namaBBM;
-    double hargaPerLiter;
+    double hargaPerLt;
 
-    BBM(String namaBBM, double hargaPerLiter){
-        this.namaBBM=namaBBM;
-        this.hargaPerLiter=hargaPerLiter;
+    BBM(String nama, double harga){
+        namaBBM = nama;
+        hargaPerLt = harga;
     }
 }
