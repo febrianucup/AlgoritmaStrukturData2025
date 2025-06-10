@@ -11,6 +11,4 @@ public class TransaksiPengisian {
         this.liter = liter;
         this.totalBayar = totalBayar;
     }
-
-
 }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SPBUMain {
     public static void main(String[] args)throws Exception {
         Scanner in = new Scanner(System.in);
-        SPBU data = new SPBU();
+        SPBU data = new SPBU(0);
         boolean keyLoop = true;
         do {
             System.out.println("----- Menu SPBU -----");

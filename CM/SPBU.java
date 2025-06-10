@@ -5,10 +5,10 @@ public class SPBU {
     NodeKendaraan head;
     NodeKendaraan tail;
     int size;
-    TransaksiPengisian[] arrOfRiwayatTransaksi = new TransaksiPengisian[100];
+    TransaksiPengisian[] arrOfRiwayatTransaksi;
     int idx;
 
-    SPBU(){
+    SPBU(int n){
         head = null;
         size = 0;
         idx = 0;
@@ -28,7 +28,7 @@ public class SPBU {
             tail.next=nodeInput;
             tail=nodeInput;
         }
-        System.out.println(">> Kendaatan masuk dalam antrian.");
+        System.out.println(">> Kendaraan masuk dalam antrian.");
         size++;
     }
 
@@ -44,15 +44,17 @@ public class SPBU {
         return head.data;
     }
 
-    void layaniKendaraan(TransaksiPengisian kendaraan)throws Exception {
+    TransaksiPengisian layaniKendaraan(TransaksiPengisian kendaraan) {
         if (isEmpty()) {
-            throw new Exception("Kendaraan tidak boleh null");
+            System.out.println("Antrian Koson");
         }
-        head = head.next; 
+        
+        head = head.next;
         kendaraan.totalBayar = kendaraan.bbm.hargaPerLt * kendaraan.liter;
         arrOfRiwayatTransaksi[idx] = new TransaksiPengisian(kendaraan.kendaraan, kendaraan.bbm, kendaraan.liter, kendaraan.totalBayar);
         idx++;
         size--;
+        return kendaraan;
     }
 
     void tampilRiwayat(){
